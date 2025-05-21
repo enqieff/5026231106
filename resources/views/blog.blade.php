@@ -10,5 +10,6 @@
 	<p>Ini adalah view blog. ada di route blog.</p>
 <br>
 <a href="satu">Pertemuan 1</a><br>
+
 </body>
 </html>

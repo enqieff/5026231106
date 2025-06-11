@@ -5,6 +5,8 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\MobilController;
+
 // import java.io ;
 
 // System.out.println
@@ -90,3 +92,12 @@ Route::post('/pegawai/update',[PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+
+//route mobil
+Route::get('/mobil', [MobilController::class, 'index']);
+Route::get('/mobil/tambah', [MobilController::class, 'tambah']);
+Route::post('/mobil/store', [MobilController::class, 'store']);
+Route::get('/mobil/edit/{id}', [MobilController::class, 'edit']);
+Route::post('/mobil/update', [MobilController::class, 'update']);
+Route::get('/mobil/hapus/{id}', [MobilController::class, 'hapus']);
+Route::get('/mobil/cari', [MobilController::class, 'cari']);

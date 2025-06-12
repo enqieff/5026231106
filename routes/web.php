@@ -6,6 +6,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\CounterController;
 
 // import java.io ;
 
@@ -101,3 +102,5 @@ Route::get('/mobil/edit/{id}', [MobilController::class, 'edit']);
 Route::post('/mobil/update', [MobilController::class, 'update']);
 Route::get('/mobil/hapus/{id}', [MobilController::class, 'hapus']);
 Route::get('/mobil/cari', [MobilController::class, 'cari']);
+
+Route::get('/pagecounter', [CounterController::class, 'index']);

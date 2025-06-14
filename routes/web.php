@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\CounterController;
+use App\Http\Controllers\KaryawanController;
 
 // import java.io ;
 
@@ -104,3 +105,10 @@ Route::get('/mobil/hapus/{id}', [MobilController::class, 'hapus']);
 Route::get('/mobil/cari', [MobilController::class, 'cari']);
 
 Route::get('/pagecounter', [CounterController::class, 'index']);
+
+//route Karyawan
+Route::get('/karyawan', [KaryawanController::class, 'index']);
+Route::get('/karyawan/tambah', [KaryawanController::class, 'tambah']);
+Route::post('/karyawan/store', [KaryawanController::class, 'store']); //jika form dikirim, route ini akan dijalankan
+Route::post('/karyawan/update',[KaryawanController::class, 'update']);
+Route::get('/karyawan/hapus/{id}', [KaryawanController::class, 'hapus']);

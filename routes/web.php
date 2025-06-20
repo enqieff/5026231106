@@ -8,6 +8,8 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\CounterController;
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\KeranjangDBController;
+use App\Http\Controllers\MyKaryawanController;
 
 // import java.io ;
 
@@ -112,3 +114,18 @@ Route::get('/karyawan/tambah', [KaryawanController::class, 'tambah']);
 Route::post('/karyawan/store', [KaryawanController::class, 'store']); //jika form dikirim, route ini akan dijalankan
 Route::post('/karyawan/update',[KaryawanController::class, 'update']);
 Route::get('/karyawan/hapus/{id}', [KaryawanController::class, 'hapus']);
+
+//Route keranjangbelanja
+//Route tampilkan dan beli
+Route::get('/keranjang', [KeranjangDBController:: class, 'index']);
+Route::get('/keranjang/beli', [KeranjangDBController:: class, 'beli']);
+//store dan batal
+Route::post('/keranjang/store', [KeranjangDBController:: class, 'store']);
+Route::get('/keranjang/batal/{ID}', [KeranjangDBController:: class, 'batal']);
+
+//route EAS
+Route::get('/eas', [MyKaryawanController::class, 'index']);
+Route::post('/eas/store', [MyKaryawanController::class, 'store']); //jika form dikirim, route ini akan dijalankan
+Route::post('/eas/update',[MyKaryawanController::class, 'update']);
+Route::get('/eas/edit/{id}', [MyKaryawanController::class, 'edit']);
+Route::post('/eas/view',[MyKaryawanController::class, 'view']);
